@@ -198,6 +198,19 @@ export default function About() {
                     https://chakra-ui.com/ <ExternalLinkIcon mx="2px" />
                   </Link>
                 </Box>
+
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    Framer Motion
+                  </Heading>
+                  <Link
+                    href="https://chakra-ui.com/"
+                    color="pink.400"
+                    isExternal
+                  >
+                    https://chakra-ui.com/ <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
               </Stack>
             </CardBody>
           </Card>
