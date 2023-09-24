@@ -1,4 +1,4 @@
-import { Link, Box, Button, AbsoluteCenter, HStack } from "@chakra-ui/react";
+import { Link, Box, Button, AbsoluteCenter, Flex } from "@chakra-ui/react";
 import { ExternalLinkIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 export default function About() {
@@ -30,17 +30,71 @@ export default function About() {
 
       <Box mt={6}>
         <h3>Bio</h3>
-        <HStack spacing="24px">
-          <Box w="40px" h="40px" bg="yellow.200">
-            1
+        <Flex>
+          <Box as={"b"}>2005</Box>
+          <Box ml={4}>Narození ve Zlíně.</Box>
+        </Flex>
+
+        <Flex>
+          <Box as={"b"}>2021</Box>
+          <Box ml={4}>
+            Nastoupení na{" "}
+            <Link href="https://creativehill.cz/" color="pink.400" isExternal>
+              Creative hill college <ExternalLinkIcon mx="2px" />
+            </Link>{" "}
+            na obor vývoj počítačových her a multumediálních aplikací.
           </Box>
-          <Box w="40px" h="40px" bg="tomato">
-            2
+        </Flex>
+
+        <Flex>
+          <Box as={"b"}>2022</Box>
+          <Box ml={4}>
+            Výhra ve školní soutěži Hackathon, kde jsem já a můj team vytvořili
+            aplikaci na téma „co by usnadnilo podnikání nebo život Tomášovi
+            Baťovi“. Více ve školním{" "}
+            <Link
+              href="https://creativniprojekty.cz/2022/11/21/hackathon/"
+              color="pink.400"
+              isExternal
+            >
+              příspěvku <ExternalLinkIcon mx="2px" />.
+            </Link>
           </Box>
-          <Box w="40px" h="40px" bg="pink.100">
-            3
+        </Flex>
+
+        <Flex>
+          <Box as={"b"}>2023</Box>
+          <Box ml={4}>
+            Praxe u firmu{" "}
+            <Link
+              href="https://wordpress.crmmini.cz/"
+              color="pink.400"
+              isExternal
+            >
+              Technodat <ExternalLinkIcon mx="2px" />
+            </Link>{" "}
+            kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
           </Box>
-        </HStack>
+        </Flex>
+
+        <Flex>
+          <Box as={"b"}>2023</Box>
+          <Box ml={4}>
+            Práce u firmy{" "}
+            <Link
+              href="https://wordpress.crmmini.cz/"
+              color="pink.400"
+              isExternal
+            >
+              Technodat <ExternalLinkIcon mx="2px" />
+            </Link>{" "}
+            a u firmy{" "}
+            <Link href="http://carat.crmmini.cz/" color="pink.400" isExternal>
+              Carat <ExternalLinkIcon mx="2px" />
+            </Link>
+            .
+          </Box>
+        </Flex>
       </Box>
     </>
   );
