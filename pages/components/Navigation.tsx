@@ -10,18 +10,13 @@ import {
   Stack,
   Container,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  MoonIcon,
-  SunIcon,
-} from "@chakra-ui/icons";
-
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 interface Props {
   children: React.ReactNode;
 }
 
-const Links = ["Projekty", "Projects", "Kontakty"];
+const Links = ["Projekty", "Kontakty"];
 
 const NavLink = (props: Props) => {
   const { children } = props;
@@ -60,7 +55,7 @@ export default function WithAction() {
             />
             <HStack spacing={8} alignItems={"center"}>
               <Box>
-                <div className="logo">Metoděj Janota</div>
+                <motion.div whileHover={{scale: 1.1, rotate: 2}} className="logo">Metoděj Janota</motion.div>
               </Box>
               <HStack
                 as={"nav"}

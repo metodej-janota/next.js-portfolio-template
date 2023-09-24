@@ -1,4 +1,17 @@
-import { Link, Box, Button, AbsoluteCenter, Flex } from "@chakra-ui/react";
+import {
+  Link,
+  Box,
+  Button,
+  AbsoluteCenter,
+  Flex,
+  Progress,
+  Card,
+  CardBody,
+  Text,
+  Heading,
+  Stack,
+  StackDivider,
+} from "@chakra-ui/react";
 import { ExternalLinkIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 export default function About() {
@@ -6,18 +19,24 @@ export default function About() {
     <>
       <Box>
         <h3>Práce</h3>
-        <p>
-          Jsem full-stack vývojář s vášní pro vytváření digitálních služeb. Mým
-          zaměřením je kombinace kódu, designu a plánování produktů. Věnuji se
-          řešení konkrétních problémů pomocí technologie a mám zkušenosti z
-          různých projektů. Mým cílem je vytvářet uživatelsky přívětivé a
-          konkurenceschopné produkty, které usnadňují život lidem. Více můžete
-          zjistit v sekci{" "}
-          <Link color="pink.400" href="https://chakra-ui.com">
-            Bio
-          </Link>
-          .
-        </p>
+        <Box>
+          <Text>
+            ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb.
+            Mým zaměřením je kombinace kódu, designu a plánování produktů.
+            Věnuji se řešení konkrétních problémů pomocí technologie a mám
+            zkušenosti z různých projektů. Mým cílem je vytvářet uživatelsky
+            přívětivé a konkurenceschopné produkty, které usnadňují život lidem.
+            Více v sekci{" "}
+            <Link color="pink.400" href="">
+              Bio
+            </Link>{" "}
+            nebo{" "}
+            <Link color="pink.400" href="">
+              Zkušenosti
+            </Link>
+            .
+          </Text>
+        </Box>
 
         <Box position="relative" h="50px" mt={3}>
           <AbsoluteCenter axis="both">
@@ -95,6 +114,94 @@ export default function About() {
             .
           </Box>
         </Flex>
+
+        <Box mt={10}>
+          <h3>Zkušenosti</h3>
+          <Box>
+            <Box>
+              JavaScript & TypeScript
+              <Progress value={80} colorScheme="teal" />
+            </Box>
+            <Box mt={2}>
+              HTML5 & CSS
+              <Progress value={90} colorScheme="teal" />
+            </Box>
+            <Box mt={2}>
+              Java & C++
+              <Progress value={50} colorScheme="teal" />
+            </Box>
+            <Box mt={2}>
+              MySQL & NoSQL
+              <Progress value={40} colorScheme="teal" />
+            </Box>
+          </Box>
+        </Box>
+
+        <Box mt={10}>
+          <h3>Oblíbené technologie</h3>
+          <Card mt={2}>
+            <CardBody>
+              <Stack divider={<StackDivider />} spacing="4">
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    NodeJS
+                  </Heading>
+                  <Link
+                    href="https://nodejs.org/en"
+                    color="pink.400"
+                    isExternal
+                  >
+                    https://nodejs.org/en <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    React
+                  </Heading>
+                  <Link href="https://react.dev/" color="pink.400" isExternal>
+                    https://react.dev/ <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    Next.js
+                  </Heading>
+                  <Link href="https://nextjs.org/" color="pink.400" isExternal>
+                    https://nextjs.org/ <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    Feather icons
+                  </Heading>
+                  <Link
+                    href="https://feathericons.com/"
+                    color="pink.400"
+                    isExternal
+                  >
+                    https://feathericons.com/ <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
+
+                <Box>
+                  <Heading size="xs" textTransform="uppercase">
+                    Chakra UI
+                  </Heading>
+                  <Link
+                    href="https://chakra-ui.com/"
+                    color="pink.400"
+                    isExternal
+                  >
+                    https://chakra-ui.com/ <ExternalLinkIcon mx="2px" />
+                  </Link>
+                </Box>
+              </Stack>
+            </CardBody>
+          </Card>
+        </Box>
       </Box>
     </>
   );
