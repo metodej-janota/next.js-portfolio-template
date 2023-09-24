@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Flex,
@@ -10,8 +8,14 @@ import {
   useColorModeValue,
   useColorMode,
   Stack,
+  Container,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon, StarIcon } from "@chakra-ui/icons";
+import {
+  HamburgerIcon,
+  CloseIcon,
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
 
 interface Props {
   children: React.ReactNode;
@@ -45,44 +49,46 @@ export default function WithAction() {
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={"center"}>
-            <Box>
-              <div className="logo">Metoděj Janota</div>
-            </Box>
-            <HStack
-              as={"nav"}
-              spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
+        <Container>
+          <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+            <IconButton
+              size={"md"}
+              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              aria-label={"Open Menu"}
+              display={{ md: "none" }}
+              onClick={isOpen ? onClose : onOpen}
+            />
+            <HStack spacing={8} alignItems={"center"}>
+              <Box>
+                <div className="logo">Metoděj Janota</div>
+              </Box>
+              <HStack
+                as={"nav"}
+                spacing={4}
+                display={{ base: "none", md: "flex" }}
+              >
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
+              </HStack>
             </HStack>
-          </HStack>
-          <Flex alignItems={"center"}>
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
+            <Flex alignItems={"center"}>
+              <Button onClick={toggleColorMode}>
+                {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+              </Button>
+            </Flex>
           </Flex>
-        </Flex>
 
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
+          {isOpen ? (
+            <Box pb={4} display={{ md: "none" }}>
+              <Stack as={"nav"} spacing={4}>
+                {Links.map((link) => (
+                  <NavLink key={link}>{link}</NavLink>
+                ))}
+              </Stack>
+            </Box>
+          ) : null}
+        </Container>
       </Box>
     </>
   );
