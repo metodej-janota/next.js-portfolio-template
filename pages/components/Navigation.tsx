@@ -55,7 +55,12 @@ export default function WithAction() {
             />
             <HStack spacing={8} alignItems={"center"}>
               <Box>
-                <motion.div whileHover={{scale: 1.1, rotate: 2}} className="logo">Metoděj Janota</motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 2 }}
+                  className="logo"
+                >
+                  Metoděj Janota
+                </motion.div>
               </Box>
               <HStack
                 as={"nav"}

@@ -1,17 +1,19 @@
-import { Container, Box, useColorModeValue, Heading } from "@chakra-ui/react";
+import { Container, Box, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Object3D from "./Sections/Objekt3D";
 import About from "./Sections/About";
 
 export default function Page() {
   return (
     <>
-      <Container>
+      <Container mt={6}>
+        <Object3D />
+
         <Box
           borderRadius="lg"
           bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
           p={3}
           mb={6}
-          mt={6}
           textAlign={"center"}
         >
           Vítejte na mém webu, jsem full-stack vývojář sídlící ve Zlíně!

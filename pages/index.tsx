@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Navigation from "./components/Navigation";
 import Page from "./components/Page";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <main>
         <Navigation />
         <Page />
-        <Footer/>
+        <Footer />
       </main>
     </>
   );
