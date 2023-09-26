@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .logo {
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 20px;

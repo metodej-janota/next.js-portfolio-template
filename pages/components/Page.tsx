@@ -6,11 +6,11 @@ import About from "./Sections/About";
 export default function Page() {
   return (
     <>
-      <Container mt={6}>
+      <Container mt={2}>
         <Tooltip
           label="Držením můžeš otáčet!"
           aria-label="A tooltip"
-          placement="top"
+          placement="right"
           hasArrow
           arrowSize={15}
         >
@@ -35,7 +35,7 @@ export default function Page() {
           <motion.div
             initial={{ y: 10, opacity: 0, scale: 1 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
           >
             <About />
           </motion.div>

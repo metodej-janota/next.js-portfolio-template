@@ -6,7 +6,7 @@ import * as THREE from "three";
 import { Mesh } from "three";
 
 function MeshComponent() {
-  const fileUrl = "/gem_pack.glb";
+  const fileUrl = "/robot.glb";
   const mesh = useRef<Mesh>(null!);
   const gltf = useLoader(GLTFLoader, fileUrl);
 
@@ -30,21 +30,22 @@ function MeshComponent() {
   );
 }
 
-export function Shiba() {
+export function Objekt() {
   return (
     <div
       className="flex justify-center items-center h-screen"
       style={{ width: "100%", height: "30vh" }}
     >
       <Canvas className="h-2xl w-2xl">
-        <PerspectiveCamera makeDefault position={[0, 0, 250]} />
-        <OrbitControls enableZoom={false}/>
+        <PerspectiveCamera makeDefault position={[0, 20, 20]} />
+        <OrbitControls enableZoom={false} />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
+        <directionalLight position={[0, 10, 0]} intensity={10} castShadow={true} />
         <MeshComponent />
       </Canvas>
     </div>
   );
 }
 
-export default Shiba;
+export default Objekt;

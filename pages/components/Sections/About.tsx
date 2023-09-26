@@ -1,8 +1,6 @@
 import {
-  Link,
   Box,
   Button,
-  AbsoluteCenter,
   Flex,
   Progress,
   Text,
@@ -10,47 +8,36 @@ import {
   ListItem,
   ListIcon,
 } from "@chakra-ui/react";
-import {
-  ExternalLinkIcon,
-  ChevronRightIcon,
-  AtSignIcon,
-} from "@chakra-ui/icons";
+import { ChevronRightIcon, LinkIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
+import MotionExternalLink from "../Animations/MotionExternalLink";
+import MotionLink from "../Animations/MotionLink";
 
 export default function About() {
   return (
     <>
       <Box>
         <h3>Práce</h3>
-        <Box>
-          <Text>
-            ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb.
-            Mým zaměřením je kombinace kódu, designu a plánování produktů.
-            Věnuji se řešení konkrétních problémů pomocí technologie a mám
-            zkušenosti z různých projektů. Mým cílem je vytvářet uživatelsky
-            přívětivé a konkurenceschopné produkty, které usnadňují život lidem.
-            Více v sekci{" "}
-            <Link color="pink.400" href="">
-              Bio
-            </Link>{" "}
-            nebo{" "}
-            <Link color="pink.400" href="">
-              Zkušenosti
-            </Link>
-            .
-          </Text>
-        </Box>
+        <Text>
+          ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb.
+          Mým zaměřením je kombinace kódu, designu a plánování produktů. Věnuji
+          se řešení konkrétních problémů pomocí technologie a mám zkušenosti z
+          různých projektů. Mým cílem je vytvářet uživatelsky přívětivé a
+          konkurenceschopné produkty, které usnadňují život lidem. Více v sekci{" "}
+          <MotionLink href="#bio">Bio</MotionLink> nebo{" "}
+          <MotionLink href="#zkusenosti">Zkušenosti</MotionLink>.
+        </Text>
 
-        <Button
-          rightIcon={<ChevronRightIcon />}
-          colorScheme="teal"
-          mt={3}
-        >
-          Mé portfolio
-        </Button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          {" "}
+          <Button rightIcon={<ChevronRightIcon />} colorScheme="teal" mt={3}>
+            Mé portfolio
+          </Button>
+        </motion.button>
       </Box>
 
       <Box mt={6}>
-        <h3>Bio</h3>
+        <h3 id="bio">Biografie</h3>
         <Flex>
           <Box as={"b"}>2005</Box>
           <Box ml={4}>Narození ve Zlíně.</Box>
@@ -60,9 +47,9 @@ export default function About() {
           <Box as={"b"}>2021</Box>
           <Box ml={4}>
             Nastoupení na{" "}
-            <Link href="https://creativehill.cz/" color="pink.400" isExternal>
-              Creative hill college <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
+            <MotionExternalLink href="https://creativehill.cz/">
+              Creative hill college
+            </MotionExternalLink>{" "}
             na obor vývoj počítačových her a multumediálních aplikací.
           </Box>
         </Flex>
@@ -74,13 +61,9 @@ export default function About() {
               Výhra ve školní soutěži Hackathon, kde jsem já a můj team
               vytvořili aplikaci na téma „co by usnadnilo podnikání nebo život
               Tomášovi Baťovi“. Více ve školním{" "}
-              <Link
-                href="https://creativniprojekty.cz/2022/11/21/hackathon/"
-                color="pink.400"
-                isExternal
-              >
-                příspěvku <ExternalLinkIcon mx="2px" />.
-              </Link>
+              <MotionExternalLink href="https://creativniprojekty.cz/2022/11/21/hackathon/">
+                příspěvku
+              </MotionExternalLink>
             </Text>
           </Box>
         </Flex>
@@ -90,13 +73,9 @@ export default function About() {
           <Box ml={4}>
             <Text>
               Praxe u firmu{" "}
-              <Link
-                href="https://wordpress.crmmini.cz/"
-                color="pink.400"
-                isExternal
-              >
-                Technodat <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
+              <MotionExternalLink href="https://wordpress.crmmini.cz/">
+                Technodat
+              </MotionExternalLink>{" "}
               kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
             </Text>
           </Box>
@@ -107,24 +86,20 @@ export default function About() {
           <Box ml={4}>
             <Text>
               Práce u firmy{" "}
-              <Link
-                href="https://wordpress.crmmini.cz/"
-                color="pink.400"
-                isExternal
-              >
-                Technodat <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
+              <MotionExternalLink href="https://wordpress.crmmini.cz/">
+                Technodat
+              </MotionExternalLink>{" "}
               a u firmy{" "}
-              <Link href="http://carat.crmmini.cz/" color="pink.400" isExternal>
-                Carat <ExternalLinkIcon mx="2px" />
-              </Link>
+              <MotionExternalLink href="http://carat.crmmini.cz/">
+                Carat
+              </MotionExternalLink>
               .
             </Text>
           </Box>
         </Flex>
 
         <Box mt={10}>
-          <h3>Zkušenosti</h3>
+          <h3 id="zkusenosti">Zkušenosti</h3>
           <Box>
             <Box>
               JavaScript & TypeScript
@@ -146,7 +121,7 @@ export default function About() {
         </Box>
 
         <Box mt={10}>
-          <h3>Web</h3>
+          <h3>Specifikace webu</h3>
           <Text>
             ㅤVítejte na mé webové stránce, kde prezentuji své nejnovější a
             nejlepší práce v oblasti webového designu a vývoje. Toto portfolio
@@ -158,55 +133,49 @@ export default function About() {
 
           <List spacing={3}>
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
-                Node.js <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
-              Zajišťuje rychlý a spolehlivý provoz serverové části mého webu.
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">Node.js</MotionExternalLink> Zajišťuje
+              rychlý a spolehlivý provoz serverové části mého webu.
             </ListItem>
 
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
-                React <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
-              Vytvářím responzivní a interaktivní uživatelské rozhraní.
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">React</MotionExternalLink> Vytvářím
+              responzivní a interaktivní uživatelské rozhraní.
             </ListItem>
 
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
-                Next.js
-                <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">Next.js</MotionExternalLink>{" "}
               Optimalizace výkonu webu s načítáním a server-side renderem.
             </ListItem>
 
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
-                Three.js
-                <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
-              Vytvářím 3D interakce, které zaujmou.
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">Three.js</MotionExternalLink> Vytvářím
+              3D interakce, které zaujmou.
             </ListItem>
 
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
-                Chakra UI
-                <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">Chakra UI</MotionExternalLink>{" "}
               Používám Chakra UI pro elegantní rozhraní.
             </ListItem>
 
             <ListItem>
-              <ListIcon as={AtSignIcon} />
-              <Link href="" color="pink.400" isExternal>
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="">
                 Framer Motion
-                <ExternalLinkIcon mx="2px" />
-              </Link>{" "}
+              </MotionExternalLink>{" "}
               Zajišťuje plynulé a atraktivní animace.
+            </ListItem>
+
+            <ListItem>
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="https://sketchfab.com/3d-models/k-vrc-love-death-robots-1a89dbad3a894642958405728ba66d9d">
+                3D Objekt
+              </MotionExternalLink>{" "}
+              {"K-VRC | Love, Death + Robots "} od ArbitraryCanary
             </ListItem>
           </List>
         </Box>
