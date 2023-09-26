@@ -1,4 +1,4 @@
-import { Container, Box, useColorModeValue } from "@chakra-ui/react";
+import { Container, Box, useColorModeValue, Tooltip } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Object3D from "./Sections/Objekt3D";
 import About from "./Sections/About";
@@ -7,7 +7,17 @@ export default function Page() {
   return (
     <>
       <Container mt={6}>
-        <Object3D />
+        <Tooltip
+          label="Držením můžeš otáčet!"
+          aria-label="A tooltip"
+          placement="top"
+          hasArrow
+          arrowSize={15}
+        >
+          <Box>
+            <Object3D />
+          </Box>
+        </Tooltip>
 
         <Box
           borderRadius="lg"

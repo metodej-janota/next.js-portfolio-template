@@ -5,14 +5,16 @@ import {
   AbsoluteCenter,
   Flex,
   Progress,
-  Card,
-  CardBody,
   Text,
-  Heading,
-  Stack,
-  StackDivider,
+  List,
+  ListItem,
+  ListIcon,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import {
+  ExternalLinkIcon,
+  ChevronRightIcon,
+  AtSignIcon,
+} from "@chakra-ui/icons";
 
 export default function About() {
   return (
@@ -38,13 +40,13 @@ export default function About() {
           </Text>
         </Box>
 
-        <Box position="relative" h="50px" mt={3}>
-          <AbsoluteCenter axis="both">
-            <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-              Mé portfolio
-            </Button>
-          </AbsoluteCenter>
-        </Box>
+        <Button
+          rightIcon={<ChevronRightIcon />}
+          colorScheme="teal"
+          mt={3}
+        >
+          Mé portfolio
+        </Button>
       </Box>
 
       <Box mt={6}>
@@ -68,50 +70,56 @@ export default function About() {
         <Flex>
           <Box as={"b"}>2022</Box>
           <Box ml={4}>
-            Výhra ve školní soutěži Hackathon, kde jsem já a můj team vytvořili
-            aplikaci na téma „co by usnadnilo podnikání nebo život Tomášovi
-            Baťovi“. Více ve školním{" "}
-            <Link
-              href="https://creativniprojekty.cz/2022/11/21/hackathon/"
-              color="pink.400"
-              isExternal
-            >
-              příspěvku <ExternalLinkIcon mx="2px" />.
-            </Link>
+            <Text>
+              Výhra ve školní soutěži Hackathon, kde jsem já a můj team
+              vytvořili aplikaci na téma „co by usnadnilo podnikání nebo život
+              Tomášovi Baťovi“. Více ve školním{" "}
+              <Link
+                href="https://creativniprojekty.cz/2022/11/21/hackathon/"
+                color="pink.400"
+                isExternal
+              >
+                příspěvku <ExternalLinkIcon mx="2px" />.
+              </Link>
+            </Text>
           </Box>
         </Flex>
 
         <Flex>
           <Box as={"b"}>2023</Box>
           <Box ml={4}>
-            Praxe u firmu{" "}
-            <Link
-              href="https://wordpress.crmmini.cz/"
-              color="pink.400"
-              isExternal
-            >
-              Technodat <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
-            kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
+            <Text>
+              Praxe u firmu{" "}
+              <Link
+                href="https://wordpress.crmmini.cz/"
+                color="pink.400"
+                isExternal
+              >
+                Technodat <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
+            </Text>
           </Box>
         </Flex>
 
         <Flex>
           <Box as={"b"}>2023</Box>
           <Box ml={4}>
-            Práce u firmy{" "}
-            <Link
-              href="https://wordpress.crmmini.cz/"
-              color="pink.400"
-              isExternal
-            >
-              Technodat <ExternalLinkIcon mx="2px" />
-            </Link>{" "}
-            a u firmy{" "}
-            <Link href="http://carat.crmmini.cz/" color="pink.400" isExternal>
-              Carat <ExternalLinkIcon mx="2px" />
-            </Link>
-            .
+            <Text>
+              Práce u firmy{" "}
+              <Link
+                href="https://wordpress.crmmini.cz/"
+                color="pink.400"
+                isExternal
+              >
+                Technodat <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              a u firmy{" "}
+              <Link href="http://carat.crmmini.cz/" color="pink.400" isExternal>
+                Carat <ExternalLinkIcon mx="2px" />
+              </Link>
+              .
+            </Text>
           </Box>
         </Flex>
 
@@ -138,82 +146,69 @@ export default function About() {
         </Box>
 
         <Box mt={10}>
-          <h3>Oblíbené technologie</h3>
-          <Card mt={2}>
-            <CardBody>
-              <Stack divider={<StackDivider />} spacing="4">
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    NodeJS
-                  </Heading>
-                  <Link
-                    href="https://nodejs.org/en"
-                    color="pink.400"
-                    isExternal
-                  >
-                    https://nodejs.org/en <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
+          <h3>Web</h3>
+          <Text>
+            ㅤVítejte na mé webové stránce, kde prezentuji své nejnovější a
+            nejlepší práce v oblasti webového designu a vývoje. Toto portfolio
+            je výsledkem mého úsilí a vášně pro tvorbu moderních a
+            interaktivních webových stránek. Na této stránce využívám několik
+            klíčových technologií a nástrojů, které zahrnují:
+          </Text>
+          <br />
 
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    React
-                  </Heading>
-                  <Link href="https://react.dev/" color="pink.400" isExternal>
-                    https://react.dev/ <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
+          <List spacing={3}>
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                Node.js <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Zajišťuje rychlý a spolehlivý provoz serverové části mého webu.
+            </ListItem>
 
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    Next.js
-                  </Heading>
-                  <Link href="https://nextjs.org/" color="pink.400" isExternal>
-                    https://nextjs.org/ <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                React <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Vytvářím responzivní a interaktivní uživatelské rozhraní.
+            </ListItem>
 
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    Feather icons
-                  </Heading>
-                  <Link
-                    href="https://feathericons.com/"
-                    color="pink.400"
-                    isExternal
-                  >
-                    https://feathericons.com/ <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                Next.js
+                <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Optimalizace výkonu webu s načítáním a server-side renderem.
+            </ListItem>
 
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    Chakra UI
-                  </Heading>
-                  <Link
-                    href="https://chakra-ui.com/"
-                    color="pink.400"
-                    isExternal
-                  >
-                    https://chakra-ui.com/ <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                Three.js
+                <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Vytvářím 3D interakce, které zaujmou.
+            </ListItem>
 
-                <Box>
-                  <Heading size="xs" textTransform="uppercase">
-                    Framer Motion
-                  </Heading>
-                  <Link
-                    href="https://chakra-ui.com/"
-                    color="pink.400"
-                    isExternal
-                  >
-                    https://chakra-ui.com/ <ExternalLinkIcon mx="2px" />
-                  </Link>
-                </Box>
-              </Stack>
-            </CardBody>
-          </Card>
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                Chakra UI
+                <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Používám Chakra UI pro elegantní rozhraní.
+            </ListItem>
+
+            <ListItem>
+              <ListIcon as={AtSignIcon} />
+              <Link href="" color="pink.400" isExternal>
+                Framer Motion
+                <ExternalLinkIcon mx="2px" />
+              </Link>{" "}
+              Zajišťuje plynulé a atraktivní animace.
+            </ListItem>
+          </List>
         </Box>
       </Box>
     </>
