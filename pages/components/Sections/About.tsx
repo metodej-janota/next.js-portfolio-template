@@ -3,13 +3,11 @@ import {
   Button,
   Flex,
   Progress,
-  Text,
   List,
   ListItem,
   ListIcon,
 } from "@chakra-ui/react";
-import { ChevronRightIcon, LinkIcon } from "@chakra-ui/icons";
-import { motion } from "framer-motion";
+import { LinkIcon } from "@chakra-ui/icons";
 import MotionExternalLink from "../Animations/MotionExternalLink";
 import MotionLink from "../Animations/MotionLink";
 
@@ -18,22 +16,19 @@ export default function About() {
     <>
       <Box>
         <h3>Práce</h3>
-        <Text>
-          ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb.
-          Mým zaměřením je kombinace kódu, designu a plánování produktů. Věnuji
-          se řešení konkrétních problémů pomocí technologie a mám zkušenosti z
-          různých projektů. Mým cílem je vytvářet uživatelsky přívětivé a
-          konkurenceschopné produkty, které usnadňují život lidem. Více v sekci{" "}
-          <MotionLink href="#bio">Bio</MotionLink> nebo{" "}
-          <MotionLink href="#zkusenosti">Zkušenosti</MotionLink>.
-        </Text>
-
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb. Mým
+        zaměřením je kombinace kódu, designu a plánování produktů. Věnuji se
+        řešení konkrétních problémů pomocí technologie a mám zkušenosti z
+        různých projektů. Mým cílem je vytvářet uživatelsky přívětivé a
+        konkurenceschopné produkty, které usnadňují život lidem. Více v sekci{" "}
+        <MotionLink href="#bio">Bio</MotionLink> nebo{" "}
+        <MotionLink href="#zkusenosti">Zkušenosti</MotionLink>.
+        {/*         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           {" "}
           <Button rightIcon={<ChevronRightIcon />} colorScheme="teal" mt={3}>
             Mé portfolio
           </Button>
-        </motion.button>
+        </motion.button> */}
       </Box>
 
       <Box mt={6}>
@@ -57,44 +52,38 @@ export default function About() {
         <Flex>
           <Box as={"b"}>2022</Box>
           <Box ml={4}>
-            <Text>
-              Výhra ve školní soutěži Hackathon, kde jsem já a můj team
-              vytvořili aplikaci na téma „co by usnadnilo podnikání nebo život
-              Tomášovi Baťovi“. Více ve školním{" "}
-              <MotionExternalLink href="https://creativniprojekty.cz/2022/11/21/hackathon/">
-                příspěvku
-              </MotionExternalLink>
-            </Text>
+            Výhra ve školní soutěži Hackathon, kde jsem já a můj team vytvořili
+            aplikaci na téma „co by usnadnilo podnikání nebo život Tomášovi
+            Baťovi“. Více ve školním{" "}
+            <MotionExternalLink href="https://creativniprojekty.cz/2022/11/21/hackathon/">
+              příspěvku
+            </MotionExternalLink>
           </Box>
         </Flex>
 
         <Flex>
           <Box as={"b"}>2023</Box>
           <Box ml={4}>
-            <Text>
-              Praxe u firmu{" "}
-              <MotionExternalLink href="https://wordpress.crmmini.cz/">
-                Technodat
-              </MotionExternalLink>{" "}
-              kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
-            </Text>
+            Praxe u firmu{" "}
+            <MotionExternalLink href="https://wordpress.crmmini.cz/">
+              Technodat
+            </MotionExternalLink>{" "}
+            kde jsem následně dostal hodnocení {"výborné"} a nabídku práce.
           </Box>
         </Flex>
 
         <Flex>
           <Box as={"b"}>2023</Box>
           <Box ml={4}>
-            <Text>
-              Práce u firmy{" "}
-              <MotionExternalLink href="https://wordpress.crmmini.cz/">
-                Technodat
-              </MotionExternalLink>{" "}
-              a u firmy{" "}
-              <MotionExternalLink href="http://carat.crmmini.cz/">
-                Carat
-              </MotionExternalLink>
-              .
-            </Text>
+            Práce u firmy{" "}
+            <MotionExternalLink href="https://wordpress.crmmini.cz/">
+              Technodat
+            </MotionExternalLink>{" "}
+            a u firmy{" "}
+            <MotionExternalLink href="http://carat.crmmini.cz/">
+              Carat
+            </MotionExternalLink>
+            .
           </Box>
         </Flex>
 
@@ -122,15 +111,12 @@ export default function About() {
 
         <Box mt={10}>
           <h3>Specifikace webu</h3>
-          <Text>
-            ㅤVítejte na mé webové stránce, kde prezentuji své nejnovější a
-            nejlepší práce v oblasti webového designu a vývoje. Toto portfolio
-            je výsledkem mého úsilí a vášně pro tvorbu moderních a
-            interaktivních webových stránek. Na této stránce využívám několik
-            klíčových technologií a nástrojů, které zahrnují:
-          </Text>
+          ㅤVítejte na mé webové stránce, kde prezentuji své nejnovější a
+          nejlepší práce v oblasti webového designu a vývoje. Toto portfolio je
+          výsledkem mého úsilí a vášně pro tvorbu moderních a interaktivních
+          webových stránek. Na této stránce využívám několik klíčových
+          technologií a nástrojů, které zahrnují:
           <br />
-
           <List spacing={3}>
             <ListItem>
               <ListIcon as={LinkIcon} />

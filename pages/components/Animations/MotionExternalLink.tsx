@@ -2,6 +2,7 @@ import { Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React, { ReactNode } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { div } from "three/examples/jsm/nodes/Nodes.js";
 
 interface MotionExternalLinkProps {
   children: ReactNode;
@@ -19,10 +20,8 @@ export default function MotionExternalLink({
       style={{ display: "inline-block" }}
     >
       <Link href={href} color="pink.400" isExternal>
-        <p>
-          {children}
-          <ExternalLinkIcon mx="2px" />{" "}
-        </p>
+        {children}
+        <ExternalLinkIcon mx="2px" />{" "}
       </Link>
     </motion.div>
   );
