@@ -38,10 +38,18 @@ export function Objekt() {
     >
       <Canvas className="h-2xl w-2xl">
         <PerspectiveCamera makeDefault position={[0, 20, 20]} />
-        <OrbitControls enableZoom={false} />
+        <OrbitControls
+          enableZoom={false}
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+        />
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        <directionalLight position={[0, 10, 0]} intensity={10} castShadow={true} />
+        <directionalLight
+          position={[0, 10, 0]}
+          intensity={10}
+          castShadow={true}
+        />
         <MeshComponent />
       </Canvas>
     </div>

@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Flex,
   Progress,
   List,
@@ -10,6 +9,8 @@ import {
 import { LinkIcon } from "@chakra-ui/icons";
 import MotionExternalLink from "../Animations/MotionExternalLink";
 import MotionLink from "../Animations/MotionLink";
+import MotionButton from "../Animations/MotionButton";
+import MotionProgress from "../Animations/MotionProgress"
 
 export default function About() {
   return (
@@ -23,12 +24,7 @@ export default function About() {
         konkurenceschopné produkty, které usnadňují život lidem. Více v sekci{" "}
         <MotionLink href="#bio">Bio</MotionLink> nebo{" "}
         <MotionLink href="#zkusenosti">Zkušenosti</MotionLink>.
-        {/*         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          {" "}
-          <Button rightIcon={<ChevronRightIcon />} colorScheme="teal" mt={3}>
-            Mé portfolio
-          </Button>
-        </motion.button> */}
+        <MotionButton width="100">Portfolio</MotionButton>
       </Box>
 
       <Box mt={6}>
@@ -41,7 +37,7 @@ export default function About() {
         <Flex>
           <Box as={"b"}>2021</Box>
           <Box ml={4}>
-            Nastoupení na{" "}
+            Nastoupení na talentovou školu{" "}
             <MotionExternalLink href="https://creativehill.cz/">
               Creative hill college
             </MotionExternalLink>{" "}
@@ -90,6 +86,7 @@ export default function About() {
         <Box mt={10}>
           <h3 id="zkusenosti">Zkušenosti</h3>
           <Box>
+            <MotionProgress value={60}>TEST TEST TEST TEST TEST</MotionProgress>
             <Box>
               JavaScript & TypeScript
               <Progress value={80} colorScheme="teal" />
@@ -116,41 +113,41 @@ export default function About() {
           výsledkem mého úsilí a vášně pro tvorbu moderních a interaktivních
           webových stránek. Na této stránce využívám několik klíčových
           technologií a nástrojů, které zahrnují:
-          <br />
+          <br /><br/>
           <List spacing={3}>
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">Node.js</MotionExternalLink> Zajišťuje
+              <MotionExternalLink href="https://nodejs.org/en">Node.js</MotionExternalLink> Zajišťuje
               rychlý a spolehlivý provoz serverové části mého webu.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">React</MotionExternalLink> Vytvářím
+              <MotionExternalLink href="https://react.dev/">React</MotionExternalLink> Vytvářím
               responzivní a interaktivní uživatelské rozhraní.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">Next.js</MotionExternalLink>{" "}
+              <MotionExternalLink href="https://nextjs.org/">Next.js</MotionExternalLink>{" "}
               Optimalizace výkonu webu s načítáním a server-side renderem.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">Three.js</MotionExternalLink> Vytvářím
+              <MotionExternalLink href="https://threejs.org/">Three.js</MotionExternalLink> Vytvářím
               3D interakce, které zaujmou.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">Chakra UI</MotionExternalLink>{" "}
+              <MotionExternalLink href="https://chakra-ui.com/">Chakra UI</MotionExternalLink>{" "}
               Používám Chakra UI pro elegantní rozhraní.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="">
+              <MotionExternalLink href="https://www.framer.com/motion/">
                 Framer Motion
               </MotionExternalLink>{" "}
               Zajišťuje plynulé a atraktivní animace.

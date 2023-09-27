@@ -56,8 +56,13 @@ export default function WithAction() {
             <HStack spacing={8} alignItems={"center"}>
               <Box>
                 <motion.div
-                  whileHover={{ scale: 1.1, rotate: 2 }}
-                  className="logo"
+                  drag
+                  dragConstraints={{
+                    top: -50,
+                    left: -50,
+                    right: 50,
+                    bottom: 50,
+                  }}
                 >
                   Metoděj Janota
                 </motion.div>
