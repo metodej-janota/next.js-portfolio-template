@@ -21,7 +21,7 @@ export default function Page() {
 
         <Box
           borderRadius="lg"
-          bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+          bg={useColorModeValue("blackAlpha.200", "whiteAlpha.200")}
           p={3}
           mb={6}
           textAlign={"center"}

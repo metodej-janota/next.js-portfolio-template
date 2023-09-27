@@ -1,16 +1,9 @@
-import {
-  Box,
-  Flex,
-  Progress,
-  List,
-  ListItem,
-  ListIcon,
-} from "@chakra-ui/react";
+import { Box, Flex, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { LinkIcon } from "@chakra-ui/icons";
 import MotionExternalLink from "../Animations/MotionExternalLink";
 import MotionLink from "../Animations/MotionLink";
 import MotionButton from "../Animations/MotionButton";
-import MotionProgress from "../Animations/MotionProgress"
+import MotionProgress from "../Animations/MotionProgress";
 
 export default function About() {
   return (
@@ -86,23 +79,11 @@ export default function About() {
         <Box mt={10}>
           <h3 id="zkusenosti">Zkušenosti</h3>
           <Box>
-            <MotionProgress value={60}>TEST TEST TEST TEST TEST</MotionProgress>
-            <Box>
-              JavaScript & TypeScript
-              <Progress value={80} colorScheme="teal" />
-            </Box>
-            <Box mt={2}>
-              HTML5 & CSS
-              <Progress value={90} colorScheme="teal" />
-            </Box>
-            <Box mt={2}>
-              Java & C++
-              <Progress value={50} colorScheme="teal" />
-            </Box>
-            <Box mt={2}>
-              MySQL & NoSQL
-              <Progress value={40} colorScheme="teal" />
-            </Box>
+            <MotionProgress value={80}>JavaScript & TypeScript</MotionProgress>
+            <MotionProgress value={70}>React, Vue</MotionProgress>
+            <MotionProgress value={95}>HTML5 & CSS</MotionProgress>
+            <MotionProgress value={60}>Java & C++</MotionProgress>
+            <MotionProgress value={50}>MySQL & NoSQL</MotionProgress>
           </Box>
         </Box>
 
@@ -113,35 +94,46 @@ export default function About() {
           výsledkem mého úsilí a vášně pro tvorbu moderních a interaktivních
           webových stránek. Na této stránce využívám několik klíčových
           technologií a nástrojů, které zahrnují:
-          <br /><br/>
+          <br />
+          <br />
           <List spacing={3}>
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="https://nodejs.org/en">Node.js</MotionExternalLink> Zajišťuje
-              rychlý a spolehlivý provoz serverové části mého webu.
+              <MotionExternalLink href="https://nodejs.org/en">
+                Node.js
+              </MotionExternalLink>{" "}
+              Zajišťuje rychlý a spolehlivý provoz serverové části mého webu.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="https://react.dev/">React</MotionExternalLink> Vytvářím
-              responzivní a interaktivní uživatelské rozhraní.
+              <MotionExternalLink href="https://react.dev/">
+                React
+              </MotionExternalLink>{" "}
+              Vytvářím responzivní a interaktivní uživatelské rozhraní.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="https://nextjs.org/">Next.js</MotionExternalLink>{" "}
+              <MotionExternalLink href="https://nextjs.org/">
+                Next.js
+              </MotionExternalLink>{" "}
               Optimalizace výkonu webu s načítáním a server-side renderem.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="https://threejs.org/">Three.js</MotionExternalLink> Vytvářím
-              3D interakce, které zaujmou.
+              <MotionExternalLink href="https://threejs.org/">
+                Three.js
+              </MotionExternalLink>{" "}
+              Vytvářím 3D interakce, které zaujmou.
             </ListItem>
 
             <ListItem>
               <ListIcon as={LinkIcon} />
-              <MotionExternalLink href="https://chakra-ui.com/">Chakra UI</MotionExternalLink>{" "}
+              <MotionExternalLink href="https://chakra-ui.com/">
+                Chakra UI
+              </MotionExternalLink>{" "}
               Používám Chakra UI pro elegantní rozhraní.
             </ListItem>
 
@@ -158,7 +150,7 @@ export default function About() {
               <MotionExternalLink href="https://sketchfab.com/3d-models/k-vrc-love-death-robots-1a89dbad3a894642958405728ba66d9d">
                 3D Objekt
               </MotionExternalLink>{" "}
-              {"K-VRC | Love, Death + Robots "} od ArbitraryCanary
+              K-VRC | Love, Death + Robots od ArbitraryCanary
             </ListItem>
           </List>
         </Box>

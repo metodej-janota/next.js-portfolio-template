@@ -9,9 +9,15 @@ import {
   useColorMode,
   Stack,
   Container,
+  Icon,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
-import { motion } from "framer-motion";
+import {
+  HamburgerIcon,
+  CloseIcon,
+  MoonIcon,
+  SunIcon,
+  AtSignIcon,
+} from "@chakra-ui/icons";
 interface Props {
   children: React.ReactNode;
 }
@@ -54,18 +60,9 @@ export default function WithAction() {
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack spacing={8} alignItems={"center"}>
-              <Box>
-                <motion.div
-                  drag
-                  dragConstraints={{
-                    top: -50,
-                    left: -50,
-                    right: 50,
-                    bottom: 50,
-                  }}
-                >
-                  Metoděj Janota
-                </motion.div>
+              <Box className="logo">
+                <Icon as={AtSignIcon} mr={1} color="pink.400" />
+                Metoděj Janota
               </Box>
               <HStack
                 as={"nav"}
