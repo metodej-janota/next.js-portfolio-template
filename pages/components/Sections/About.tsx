@@ -1,14 +1,14 @@
-import { Box, Flex, List, ListItem, ListIcon } from "@chakra-ui/react";
+import { Box, Flex, List, ListItem, ListIcon, Link } from "@chakra-ui/react";
 import { LinkIcon } from "@chakra-ui/icons";
-import MotionExternalLink from "../Animations/MotionExternalLink";
-import MotionLink from "../Animations/MotionLink";
-import MotionButton from "../Animations/MotionButton";
-import MotionProgress from "../Animations/MotionProgress";
+import MotionExternalLink from "../Knihovna/MotionExternalLink";
+import MotionLink from "../Knihovna/MotionLink";
+import MotionButton from "../Knihovna/MotionButton";
+import MotionProgress from "../Knihovna/MotionProgress";
 
 export default function About() {
   return (
     <>
-      <Box>
+      <Box mt={6}>
         <h3>Práce</h3>
         ㅤJsem full-stack vývojář s vášní pro vytváření digitálních služeb. Mým
         zaměřením je kombinace kódu, designu a plánování produktů. Věnuji se
@@ -111,6 +111,22 @@ export default function About() {
                 React
               </MotionExternalLink>{" "}
               Vytvářím responzivní a interaktivní uživatelské rozhraní.
+            </ListItem>
+
+            <ListItem>
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="https://www.typescriptlang.org/">
+                TypeScript
+              </MotionExternalLink>{" "}
+              Používám pro lepší objektové programování.
+            </ListItem>
+
+            <ListItem>
+              <ListIcon as={LinkIcon} />
+              <MotionExternalLink href="https://www.php.net/">
+                PHP
+              </MotionExternalLink>{" "}
+              Pro kontaktní formulář a server side dotazy.
             </ListItem>
 
             <ListItem>
