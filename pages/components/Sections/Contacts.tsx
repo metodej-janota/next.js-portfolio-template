@@ -29,7 +29,7 @@ export default function Contacts() {
         <Input type="email" placeholder="např. priklad@priklad.cz" />
       </FormControl>
 
-      <FormControl mt={2}>
+      <FormControl mt={2} isRequired>
         <FormLabel>Vaše zpráva</FormLabel>
         <Textarea
           placeholder="Napište mi sem Váš nápad, dotaz nebo komentář.."
