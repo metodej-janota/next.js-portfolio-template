@@ -10,15 +10,17 @@ interface MotionLinkLinkProps {
 export default function MotionLink({ children, href }: MotionLinkLinkProps) {
   return (
     <Link
-      href={href}
       color="pink.400"
       as={motion.div}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.9 }}
       style={{ display: "inline-block" }}
     >
-      {"#"}
-      {children}
+      <a href={href}>
+        {" "}
+        {"#"}
+        {children}
+      </a>
     </Link>
   );
 }

@@ -14,7 +14,6 @@ export default function MotionExternalLink({
 }: MotionExternalLinkProps) {
   return (
     <Link
-      href={href}
       color="pink.400"
       isExternal
       as={motion.div}
@@ -22,8 +21,11 @@ export default function MotionExternalLink({
       whileTap={{ scale: 0.9 }}
       style={{ display: "inline-block" }}
     >
-      {children}
-      <ExternalLinkIcon mx="2px" />{" "}
+      <a href={href}>
+        {" "}
+        {children}
+        <ExternalLinkIcon mx="2px" />{" "}
+      </a>
     </Link>
   );
 }
