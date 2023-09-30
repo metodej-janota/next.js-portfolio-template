@@ -19,93 +19,27 @@ import {
   AtSignIcon,
 } from "@chakra-ui/icons";
 import { useState } from "react";
-import { motion } from "framer-motion";
-/* SEKCE */
-import Intro from "./Intro";
-import About from "../Sections/About";
-import Contacts from "../Sections/Contacts";
-import Projects from "../Sections/Projects";
+import { useRouter } from "next/router";
+import NavLink from "../Knihovna/NavLink";
 
 const Links = [
+  { label: "Profil", id: "home" },
   { label: "Projekty", id: "projects" },
   { label: "Kontakty", id: "contacts" },
 ];
-
-const NavLink = (props: { label: string; id: string; onClick: () => void }) => {
-  const { label, onClick } = props;
-  return (
-    <Box
-      px={2}
-      py={1}
-      rounded={"md"}
-      _hover={{
-        textDecoration: "none",
-        bg: useColorModeValue("gray.200", "gray.700"),
-      }}
-      onClick={onClick}
-    >
-      {label}
-    </Box>
-  );
-};
-
-const HomePage = () => {
-  return (
-    <motion.div
-      initial={{ y: 10, opacity: 0, scale: 1 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-    >
-      <About />
-    </motion.div>
-  );
-};
-
-const ProjectsPage = () => {
-  return (
-    <motion.div
-      initial={{ y: 10, opacity: 0, scale: 1 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-    >
-      <Projects />
-    </motion.div>
-  );
-};
-
-const ContactsPage = () => {
-  return (
-    <motion.div
-      initial={{ y: 10, opacity: 0, scale: 1 }}
-      animate={{ y: 0, opacity: 1, scale: 1 }}
-      transition={{ delay: 0.3, duration: 0.5 }}
-    >
-      <Contacts />
-    </motion.div>
-  );
-};
 
 export default function WithAction() {
   const [activePage, setActivePage] = useState("home");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const router = useRouter();
 
-  const handleLinkClick = (id: string) => {
+  const handleNavLinkClick = (id: string) => {
     setActivePage(id);
-    onClose();
-  };
-
-  const getPageContent = () => {
-    switch (activePage) {
-      case "home":
-        return <HomePage />;
-      case "projects":
-        return <ProjectsPage />;
-      case "contacts":
-        return <ContactsPage />;
-      default:
-        return <HomePage />;
-    }
+    router.push({
+      pathname: "/",
+      query: { activePage: id },
+    });
   };
 
   return (
@@ -124,7 +58,7 @@ export default function WithAction() {
               <Box
                 className="logo"
                 id="home"
-                onClick={() => handleLinkClick("home")}
+                onClick={() => setActivePage("home")}
               >
                 <Icon as={AtSignIcon} mr={1} color="pink.400" />
                 Metoděj Janota
@@ -139,7 +73,7 @@ export default function WithAction() {
                     key={link.id}
                     label={link.label}
                     id={link.id}
-                    onClick={() => handleLinkClick(link.id)}
+                    setActivePage={handleNavLinkClick}
                   />
                 ))}
               </HStack>
@@ -159,7 +93,7 @@ export default function WithAction() {
                     key={link.id}
                     label={link.label}
                     id={link.id}
-                    onClick={() => handleLinkClick(link.id)}
+                    setActivePage={handleNavLinkClick}
                   />
                 ))}
               </Stack>
@@ -167,10 +101,6 @@ export default function WithAction() {
           ) : null}
         </Container>
       </Box>
-      <Container mt={2}>
-        <Intro />
-        {getPageContent()}
-      </Container>
     </>
   );
 }

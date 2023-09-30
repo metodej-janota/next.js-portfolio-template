@@ -6,8 +6,12 @@ import {
   Button,
   Textarea,
   useToast,
+  Center,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { BsFacebook, BsGithub, BsLinkedin } from "react-icons/bs";
 
 export default function Contacts() {
   const toast = useToast();
@@ -56,6 +60,51 @@ export default function Contacts() {
       >
         Odeslat formulář
       </Button>
+
+      <Box>
+        <Center mt={6}>
+          <Stack spacing={2} align={"center"} w={"full"}>
+            <Button
+              w={"full"}
+              as={motion.div}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.99 }}
+              leftIcon={<BsGithub />}
+              variant={"outline"}
+            >
+              <Center>
+                <Text>GitHub</Text>
+              </Center>
+            </Button>
+
+            <Button
+              w={"full"}
+              as={motion.div}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.99 }}
+              leftIcon={<BsFacebook />}
+              variant={"outline"}
+            >
+              <Center>
+                <Text>Facebook</Text>
+              </Center>
+            </Button>
+
+            <Button
+              w={"full"}
+              as={motion.div}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.99 }}
+              leftIcon={<BsLinkedin />}
+              variant={"outline"}
+            >
+              <Center>
+                <Text>LinkdedIn</Text>
+              </Center>
+            </Button>
+          </Stack>
+        </Center>
+      </Box>
     </Box>
   );
 }
