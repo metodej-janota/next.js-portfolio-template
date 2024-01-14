@@ -27,10 +27,10 @@ export default function Page() {
         mb={6}
         textAlign={"center"}
       >
-        Vítejte na mém webu, jsem full-stack vývojář sídlící ve Zlíně!
+        Welcome to my website!
       </Box>
-      <h1>Metoděj Janota</h1>
-      <p>Multimediální obor ( Vývojář / Umělec / Designer )</p>
+      <h1>Your name</h1>
+      <p>Your profession</p>
       <Site activePage={activePageState} />
     </Container>
   );

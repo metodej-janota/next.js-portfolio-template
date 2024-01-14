@@ -1,1 +1,1 @@
-
+<MotionLink href="#bio">Bio</MotionLink>

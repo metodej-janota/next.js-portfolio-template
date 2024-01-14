@@ -51,7 +51,7 @@ export default function ProjectCard({
 
         <CardFooter>
           <MotionButton href={href} width="100%">
-            Přejít na GitHub
+            Jump to GitHub
           </MotionButton>
         </CardFooter>
       </Stack>

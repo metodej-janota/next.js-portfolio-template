@@ -19,24 +19,24 @@ export default function Contacts() {
   return (
     <Box mt={6}>
       <FormControl isRequired>
-        <FormLabel>Vaše jméno</FormLabel>
-        <Input placeholder="např. Pepa" />
+        <FormLabel>Your name</FormLabel>
+        <Input placeholder="e.g. Bob" />
       </FormControl>
 
       <FormControl isRequired mt={2}>
-        <FormLabel>Vaše příjmení</FormLabel>
-        <Input placeholder="např. Novák" />
+        <FormLabel>Your surname</FormLabel>
+        <Input placeholder="e.g. Osbourne" />
       </FormControl>
 
       <FormControl isRequired mt={2}>
-        <FormLabel>Vaše emailová adresa</FormLabel>
-        <Input type="email" placeholder="např. priklad@priklad.cz" />
+        <FormLabel>Your email address</FormLabel>
+        <Input type="email" placeholder="e.g. example@example.com" />
       </FormControl>
 
       <FormControl mt={2} isRequired>
-        <FormLabel>Vaše zpráva</FormLabel>
+        <FormLabel>Your message</FormLabel>
         <Textarea
-          placeholder="Napište mi sem Váš nápad, dotaz nebo komentář.."
+          placeholder="Write me here your idea, question or comment.."
           height={"150px"}
           resize={"none"}
         />
@@ -52,7 +52,7 @@ export default function Contacts() {
         width={"100%"}
         onClick={() =>
           toast({
-            title: "Email byl úspěšne odeslán",
+            title: "Email sent successfully",
             status: "success",
             isClosable: true,
           })

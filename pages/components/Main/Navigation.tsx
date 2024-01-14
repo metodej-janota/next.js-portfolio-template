@@ -20,12 +20,12 @@ import {
 } from "@chakra-ui/icons";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import NavLink from "../Knihovna/NavLink";
+import NavLink from "../library/NavLink";
 
 const Links = [
-  { label: "Profil", id: "home" },
-  { label: "Projekty", id: "projects" },
-  { label: "Kontakty", id: "contacts" },
+  { label: "home", id: "home" },
+  { label: "projects", id: "projects" },
+  { label: "contacts", id: "contacts" },
 ];
 
 export default function WithAction() {
@@ -61,7 +61,7 @@ export default function WithAction() {
                 onClick={() => setActivePage("home")}
               >
                 <Icon as={AtSignIcon} mr={1} color="pink.400" />
-                Metoděj Janota
+                Your name
               </Box>
               <HStack
                 as={"nav"}
